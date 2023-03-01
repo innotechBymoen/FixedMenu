@@ -1,0 +1,76 @@
+// Normal starting CSS, nothing crazy here
+* {
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+// Almost everything here is normal for a header, typical grid
+#page_header {
+    min-height: 10vh;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background-color: #666666;
+
+    // This is where the magic happens
+    // We set the header to have a position of sticky
+    // This will tell the browser that this tag should be treated like any other tag
+    // Until the user scrolls to the amount given in the top property past the tag
+    // At that point the tag will stick to the page, and stay there.
+    // The rest of the page will still act as if the tag was in its normal spot
+    position: sticky;
+    top: 0px;
+
+
+    // Normal CSS style for the children images of the header
+    >img {
+        width:30px;
+    }
+}
+
+
+// Normal main and footer styles
+#page_main {
+    background-color: #333333;
+    min-height: 180vh;
+    width: 100%;
+}
+
+#page_footer {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 10vh;
+    background-color: #666666;
+}
+
+// The call to action button is also styled mostly like normal
+#call_to_action {
+    background-color: goldenrod;
+    color: navy;
+    border-radius: 10px;
+    padding: 10px 10px;
+
+    // But by giving a position of fixed, the tag is pulled out of the normal document flow
+    // The other tags pretend like it doesn't exist
+    // The call to action has been fixed 15px from the bottom of the viewport and 15 pixels from the right
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+
+    // Normal CSS for changing the cursor on hover
+    &:hover {
+        cursor: pointer;
+    }
+}
