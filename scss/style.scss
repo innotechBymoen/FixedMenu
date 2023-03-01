@@ -53,6 +53,9 @@ img {
     width: 100%;
     min-height: 10vh;
     background-color: #666666;
+    color: white;
+    text-align: center;
+    padding-bottom: 50px;
 }
 
 // The call to action button is also styled mostly like normal
@@ -65,6 +68,8 @@ img {
     // But by giving a position of fixed, the tag is pulled out of the normal document flow
     // The other tags pretend like it doesn't exist
     // The call to action has been fixed 15px from the bottom of the viewport and 15 pixels from the right
+    // You need to make sure that fixed elements don't cover up anything important like links in a footer
+    // You can add things like padding and margin to other elements in order to give fixed elements room
     position: fixed;
     bottom: 15px;
     right: 15px;
